@@ -52,14 +52,33 @@ Message **[@AgentPayyBot](https://t.me/AgentPayyBot)** on Telegram from your pho
 
 ---
 
+## 🌐 NPCI UAP, AP2 & x402 Protocol Architecture
+
+* **Discovery Manifest:** `GET /.well-known/agent-commerce.json` (RFC-standard machine-to-machine capabilities manifest).
+* **UAP JSON-LD Catalog:** `GET /api/catalog/uap` (Schema.org Product ItemList for autonomous agents).
+* **Machine-to-Machine x402 Handshake:** `POST /acp/v1/checkout`
+  * When called without an AP2 signature, returns `HTTP 402 Payment Required` + `WWW-Authenticate: AP2-Token` challenge header.
+  * When called with an AP2 token (`Authorization: AP2-Token <id>:<sig>`), verifies cryptographic boundaries and settles on Razorpay test mode.
+
+---
+
+## 📈 Merchant Growth: Campaign Orchestrator
+
+* **AI-Targeted Campaigns:** Merchants configure autonomous discount and shipping waiver rules in `/merchant-portal`.
+* **Autonomous Discovery:** AI buyer agents automatically detect and apply active merchant campaigns during checkout.
+* **Growth Analytics:** Tracks real-time revenue unlocked by AI buyers vs conventional visitors.
+
+---
+
 ## 🌐 Real Storefront & Portal URLs
 
 | Window / Role | URL | What It Demonstrates |
 |---|---|---|
 | **AI Command Studio** | [http://localhost:3000](http://localhost:3000) | Headless UPI Autopay vault, multi-store comparison matrix, coupon hunter, AP2 token inspector, and upsell drawer. |
+| **Merchant Growth Portal** | [http://localhost:3000/merchant-portal](http://localhost:3000/merchant-portal) | **Campaign Orchestrator**, Live Orders feed, and **Cryptographic Webhook Settlement** verification! |
 | **Amazon India Storefront** | [http://localhost:3000/merchants/aura-tech](http://localhost:3000/merchants/aura-tech) | **1,050+ Products** with authentic Amazon UI, Prime badges, and search. |
 | **Flipkart Assured Storefront**| [http://localhost:3000/merchants/prime-gadgets](http://localhost:3000/merchants/prime-gadgets) | **1,050+ Products** with authentic Flipkart UI, Assured badges, and bank offers. |
-| **Merchant Live Admin** | [http://localhost:3000/merchant-portal](http://localhost:3000/merchant-portal) | Real-time live orders feed with **Cryptographic Webhook Settlement** verification! |
+| **Protocol Manifest (RFC)** | [http://localhost:5000/.well-known/agent-commerce.json](http://localhost:5000/.well-known/agent-commerce.json) | Real machine discovery manifest for AI buyers. |
 | **Real Telegram Bot** | [https://t.me/AgentPayyBot](https://t.me/AgentPayyBot) | Real Telegram bot running directly on your phone. |
 
 ---

@@ -1,0 +1,20 @@
+{
+  "name": "agent-storefront-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Agent-Ready Storefront (AP2 Mandates, ACP Checkout, Razorpay Integration, Groq Agent)",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "@qdrant/js-client-rest": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "groq-sdk": "^0.15.0",
+    "mongodb": "^7.5.0",
+    "razorpay": "^2.9.5"
+  }
+}

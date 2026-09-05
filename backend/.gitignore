@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+data/store.json
+store.json
+*.tmp.*
+data/*.tmp.*
+node_modules/
+*.log
+logs/
+.DS_Store
+
